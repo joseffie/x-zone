@@ -1,0 +1,24 @@
+include ../main-nav/main-nav.pug
+include ../burger/burger.pug
+include ../btn/btn.pug
+include ../logo/logo.pug
+
+mixin header
+  header.header.w-full.py-4(
+    class='bg-[rgba(17,24,39,0.5)] backdrop-blur-[6px] shadow-[0_0_10px_0_rgba(0,0,0,0.5)]'
+  )&attributes(attributes)
+    .container
+      .flex.items-center(class='gap-[10px]')
+        -
+          const btnStyles = [
+            'header__btn ml-10',
+            'md_ml-0 md_mr-5 ss_m-0',
+            'ss_fixed ss_left-0 ss_right-0 ss_w-full',
+            'ss_rounded-tl-[5px] ss_rounded-tr-[5px] ss_rounded-bl-none ss_rounded-br-none',
+            'ss_pointer-events-none ss_invisible ss_opacity-0 ss_z-70'
+          ]
+
+        +logo.mr-auto
+        +main-nav
+        +btn('Contact Us')(class=btnStyles.join(' '), href='#')
+        +burger

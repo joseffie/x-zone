@@ -1,0 +1,7 @@
+include ../icon/icon.pug
+
+mixin logo
+  a.inline-flex.items-center.no-underline.cursor-pointer.duration-200.hover_opacity-80(href='/')&attributes(attributes)
+    .inline-block
+      img(src='@img/logo.svg', alt='Logo')
+    span.inline-block.ml-2.font-secondary.text-white-100.text-xl.leading-6.font-medium Zone.

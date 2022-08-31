@@ -1,0 +1,31 @@
+mixin main-nav
+  -
+    const navStyles = [
+      'main-nav shadow-none duration-400 will-change-[left,top]',
+      'md_fixed md_-left-full md_top-0 md_w-[25vw] md_h-screen md_overflow-auto md_z-70',
+      'sm_w-full sm_left-0 sm_-top-[100vh]'
+    ]
+
+    const navListStyles = [
+      'flex items-center gap-8 list-none p-0',
+      'md_flex-col md_gap-2 md_min-h-full md_items-start md_pt-3 md_px-2',
+      'sm_items-center sm_justify-center sm_pt-6 sm_px-0 sm_gap-3',
+      'ss_pb-16'
+    ]
+
+  nav(class=navStyles.join(' '))&attributes(attributes)
+    ul(class=navListStyles.join(' '))
+      each item in mainNavData
+        - var itemClasses = ['relative p-0 sm_mr-0 sm_text-center'];
+
+        li(class=itemClasses)
+          -
+            const linkClass = [
+              'main-nav__link relative block px-3 py-2 font-primary font-medium',
+              'text-sm duration-200 tracking-wide no-underline sm_px-4'
+            ]
+
+          if (item.url)
+            a(class=linkClass, href=item.url)= item.title
+          else
+            span(class=linkClass)= item.title

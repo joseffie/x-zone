@@ -1,0 +1,27 @@
+extends ../base/pug/default.pug
+
+include ../components/header/header.pug
+include ../components/footer/footer.pug
+include ../components/hero/hero.pug
+include ../components/services/services.pug
+include ../components/steps/steps.pug
+include ../components/team/team.pug
+include ../components/cta/cta.pug
+
+block pageConfig
+  -
+    title = 'Home'
+    pageUrl = '/'
+
+block header
+  +header
+
+block main
+  +hero
+  +services
+  +steps
+  +team
+  +cta
+
+block footer
+  +footer

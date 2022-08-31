@@ -1,0 +1,39 @@
+include ../btn/btn.pug
+include ../icon/icon.pug
+
+mixin hero
+  div(class='pt-[20px]')&attributes(attributes)
+    .container
+      .flex.items-center.justify-between.gap-4.ss_flex-wrap
+        .flex-grow-0.flex-shrink.relative.ss_flex-grow.ss_basis-auto.ss_text-center(class='basis-[55%]')
+          -
+            const titleStyle = [
+              'bg-clip-text bg-gradient-text-r mb-7 text-[58px] font-bold',
+              'text-fill-transparent leading-normal tracking-wide',
+              'md_text-[42px] md_mb-4 sm_text-[36px] xs_text-[28px]'
+            ]
+
+          h1(class=titleStyle.join(' '))
+            | Virtual reality <br>
+            | Business solution
+
+          -
+            const paragraphStyle = [
+              'font-medium leading-loose text-[15px] text-white-200 opacity-80',
+              'md_text-[14px] md_leading-[180%] sm_text-[13px] xs_text-[12px] xs_leading-normal'
+            ]
+
+          p(class=paragraphStyle.join(' '))
+            | We have over 15 year experience in business consultting arena.
+            | We have over 15 year experience in business consultting arena
+            | and artficial intelligence.
+          .flex.items-center.gap-7.mt-8.ss_justify-center
+            +btn('Join Us')(class='!px-8 !py-4 sm_!px-6 sm_!py-3', href='#')
+
+            a.inline-flex.items-center.gap-4.font-medium.text-base.text-white-200.duration-200.hover_text-mainColor.sm_text-sm(
+              href='#'
+            )
+              +icon.sm_w-6.sm_h-6(name='play-icon', type='mono', class='w-[30px] h-[30px]')
+              | Watch video
+        .flex-grow-0.flex-shrink.relative.ss_flex-grow.ss_basis-auto(class='basis-[45%]')
+          img.mx-auto(src='@img/hero.png', alt='Hero')

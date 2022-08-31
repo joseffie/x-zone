@@ -1,0 +1,35 @@
+include ../btn/btn.pug
+
+mixin steps
+  div(class='mt-[120px] xs_mt-[90px]')&attributes(attributes)
+    .container
+      .flex.flex-col.gap-14
+        .flex.items-center.justify-between.gap-9.ss_flex-wrap
+          .relative.ss_flex-grow.ss_basis-full(class='basis-1/2')
+            img.mx-auto.xs_w-full(class='ss_w-3/4', src='@img/man-using-vr.png', alt='Man that using VR')
+          .ss_flex-grow.ss_basis-full(class='basis-1/2')
+            h2.mb-7.font-medium.leading-tight.md_mb-5.md_text-3xl.sm_text-2xl(class='text-4.5xl')
+              | We complete every projects extra care as customer need
+            p.text-base.md_text-sm.sm_text-xs(class='!leading-snug')
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at
+              | dictum risus, non suscipit arcu. Quisque aliquam posuere tortor, sit
+              | amet convallis nuncoe scelerisque in. orem ipsum dolor sit amet,
+              | consectetur adipisicing elit. Labore eius molestiae facere, natus
+              | reprehenderit eaque eum, autem ipsam. Magfini, error. Tempora odit
+              | laborum iure inventore possimus laboriosam qui nam.
+            +btn('Read more', 'font-regular').mt-7.xs_mx-auto(class='!block')
+
+        .flex.items-center.justify-between.gap-9.ss_flex-wrap.ss_flex-col-reverse
+          .ss_flex-grow.ss_basis-full(class='basis-1/2')
+            h2.mb-7.font-medium.leading-tight.md_mb-5.md_text-3xl.sm_text-2xl(class='text-4.5xl')
+              | We complete every project extra care as customer need
+            p.text-base.md_text-sm.sm_text-xs(class='!leading-snug')
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at
+              | dictum risus, non suscipit arcu. Quisque aliquam posuere tortor, sit
+              | amet convallis nuncoe scelerisque in. orem ipsum dolor sit amet,
+              | consectetur adipisicing elit. Labore eius molestiae facere, natus
+              | reprehenderit eaque eum, autem ipsam. Magfini, error. Tempora odit
+              | laborum iure inventore possimus laboriosam qui nam.
+            +btn('Read more', 'font-regular').mt-7.xs_mx-auto(class='!block')
+          .relative.ss_flex-grow.ss_basis-full(class='basis-1/2')
+            img.mx-auto.xs_w-full(class='ss_w-3/4', src='@img/man-using-vr-2.png', alt='Man that using VR')

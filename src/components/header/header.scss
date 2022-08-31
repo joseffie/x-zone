@@ -1,0 +1,9 @@
+.header {
+  $btnTopPos: calc(100vh - var(--header-btn-height));
+
+  &__btn {
+    @screen ss {
+      top: $btnTopPos;
+    }
+  }
+}

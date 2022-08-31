@@ -1,0 +1,17 @@
+// button variables located in
+// src/base/styles/_variables/_button.scss
+
+.btn {
+  padding: $btn-padding-vertical $btn-padding-horizontal;
+  background-color: $btn-bg-color;
+  border-radius: $btn-base-border-radius;
+
+  &:hover,
+  &:focus {
+    background-color: $btn-hover-bg-color;
+  }
+
+  &_font-regular {
+    @apply font-normal;
+  }
+}

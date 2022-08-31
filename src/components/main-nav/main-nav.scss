@@ -1,0 +1,40 @@
+// nav variables located in
+// src/base/styles/_variables/_nav.scss
+
+.main-nav {
+  @screen md {
+    background-color: $nav-background;
+    box-shadow: 0 0 0.5rem rgb(0 0 0 / 50%);
+
+    &._active {
+      left: 0;
+    }
+  }
+
+  @screen sm {
+    &._active {
+      top: 0;
+    }
+  }
+
+  @screen ss {
+    &._active ~ .header__btn {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &__link {
+    color: $nav-text-color;
+
+    @screen sm {
+      color: $nav-opened-text-color;
+      font-size: $nav-opened-font-size;
+    }
+
+    &:hover {
+      color: $nav-text-color-hover;
+    }
+  }
+}

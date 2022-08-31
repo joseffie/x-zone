@@ -1,0 +1,45 @@
+include ../icon/icon.pug
+include ../btn/btn.pug
+
+mixin cta
+  .cta(class='mt-[120px] xs_mt-[90px]')&attributes(attributes)
+    .container
+      -
+        const blockStyle = [
+          'pt-12 pb-11 px-40 bg-glassmorph-dark-gradient-r rounded-[34px]',
+          'shadow-[0_22px_18px_rgba(0,0,0,0.05)] md_px-20 ss_px-12',
+          'xs_p-0 xs_bg-opacity-0 xs_bg-none xs_shadow-none'
+        ]
+
+      div(class=blockStyle.join(' '))
+        .text-center.mb-7.xs_mb-6
+          h2.font-medium.ss_text-2xl.leading-tight.md_text-3xl(class='text-4.5xl')
+            | Subscribe to get the Latest News
+          p.mt-3.font-sans.text-base.leading-relaxed.opacity-80.md_text-sm.sm_text-xs
+            | We recommended you to subscribe to our newspaper, drop your
+            | email below to get daily update about us
+        form.relative
+          -
+            const inputStyle = [
+              'cta__input block w-full py-6 pl-11 outline-none text-lg',
+              'bg-glassmorph-dark-gradient-r bg-primary border-[1px]',
+              'border-white-100 border-opacity-10 rounded-[70px]',
+              'placeholder_text-[rgba(255,255,255,0.9)] text-[rgba(255,255,255,0.9)]',
+              'md_text-base md_py-5 sm_text-sm sm_pl-8 ss_text-xs ss_py-4 ss_pl-6'
+            ]
+
+            const buttonStyle = [
+              'cta__btn !inline-flex absolute top-0 bottom-0 right-2.5 items-center',
+              'justify-center gap-2 !rounded-[70px] my-2.5',
+              'ss_right-2 ss_my-2 !ss_rounded-full'
+            ]
+
+          input(
+            class=inputStyle.join(' '),
+            type='email',
+            placeholder='Enter your email address',
+            required
+          )
+          +btn('')(class=buttonStyle.join(' '), type='submit')
+            +icon(name='message-icon', type='mono', class='w-[14px] h-[14px]')
+            span.ss_hidden Subscribe

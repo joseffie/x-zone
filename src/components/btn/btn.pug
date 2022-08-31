@@ -1,0 +1,42 @@
+//- Example usage
+//- +btn('Button-link')(href='/') - There is href - this is a link
+//- +btn('Button-input', '', true) - There is isInput flag - this is a input
+//- +btn('Button', 'success') - No href and isInput - this is a button
+
+mixin btn(text, mods, isInput)
+  //- Params
+  //- text    {string} - button text
+  //- mods    {string} - list of modifiers
+  //- isInput {bool}   - «This is a input» flag
+  -
+    var allMods = '';
+
+    if (typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' btn_' + modsList[i].trim();
+      }
+    }
+
+  -
+    const btnClass = [
+      'btn inline-block box-border max-w-full m-0',
+      'font-primary text-sm text-white-200 font-medium',
+      'overflow-hidden leading-[18px] text-center no-underline',
+      'align-middle bg-gradient-r cursor-pointer duration-300',
+      'select-none touch-manipulation hover_shadow-[0_0_0.5rem_0_#2563eb]'
+    ]
+
+  //- passed href, this is a link
+  if (attributes.href)
+    a(class=btnClass.join(' ') + allMods)&attributes(attributes)!= text
+      block
+
+  //- else if passes isInput as true, this is a input
+  else if (typeof(isInput) !== 'undefined' && isInput)
+    input(class=btnClass.join(' ') + allMods, value=text, type='button')&attributes(attributes)
+
+  //- else this is a button
+  else
+    button(class=btnClass.join(' ') + allMods)&attributes(attributes)!= text
+      block

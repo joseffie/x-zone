@@ -1,0 +1,97 @@
+include ../logo/logo.pug
+include ../icon/icon.pug
+
+mixin footerCol(data, hStyle, itemStyle, linkStyle)
+  each item in data
+    div(class='basis-1/2')&attributes(attributes)
+      - const listHeaderStyle = hStyle !== 'undefined' && hStyle ? hStyle.join(' ') : '';
+      - const listItemStyle = itemStyle !== 'undefined' && itemStyle ? itemStyle.join(' ') : '';
+      - const listLinkStyle = linkStyle !== 'undefined' && linkStyle ? linkStyle.join(' ') : '';
+
+      h5(class=listHeaderStyle)= item.header
+      ul.p-0
+        if (item.links)
+          each subItem in item.links
+            li(class=listItemStyle)
+              a(class=listLinkStyle, href=subItem.url)!= subItem.title
+
+mixin footer
+  footer(class='mt-[100px] xs_mt-[80px]')&attributes(attributes)
+    .container
+      -
+        const listHeaderStyle = [
+          'mb-4 text-base text-white-100 text-opacity-80 font-medium',
+          'tracking-[0.01em] md_text-sm md_text-center xs_text-xs'
+        ]
+
+        const itemStyle = [
+          'mb-4 last_mb-0 text-base text-white-100 text-opacity-80',
+          'tracking-[0.01em] md_text-sm md_text-center xs_text-xs'
+        ]
+
+        const linkStyle = [
+          'no-underline text-inherit duration-200',
+          'py-0.5 hover_text-mainColor'
+        ]
+
+      .flex.justify-between.gap-10.pb-8.md_flex-wrap.md_gap-x-5
+        .md_basis-full.md_flex.md_flex-col.md_items-center(class='basis-1/5')
+          +logo
+          address.flex.flex-col.mt-4.not-italic.md_text-center(class='gap-[10px]')
+            -
+              const addressLinkStyle = [
+                'inline-flex items-center gap-2 duration-150',
+                'hover_text-mainColor md_text-sm xs_text-xs'
+              ]
+
+            p: span(class=`${addressLinkStyle.join(' ')} cursor-default`)
+              | Dhaka, Bangladesh
+            p: a(class=addressLinkStyle.join(' '), href='tel:+8800943833399')
+              | 0943833399
+            p: a(class=addressLinkStyle.join(' '), href='mailto:support@zone.com')
+              | support@zone.com
+
+          //- List of social icons
+          .flex.items-center.gap-4.mt-4
+            -
+              const socialLinkStyle = [
+                'inline-flex items-center justify-center w-8 h-8',
+                'bg-glassmorph-dark-gradient-r no-underline border-[1px]',
+                'border-white-100 border-opacity-10 rounded-full',
+                'duration-200 hover_opacity-60 xs_w-7 xs_h-7'
+              ]
+
+            a(class=socialLinkStyle.join(' '), href='#')
+              +icon(name='white-facebook-icon', type='mono', class='w-1/2 h-1/2')
+            a(class=socialLinkStyle.join(' '), href='#')
+              +icon(name='white-twitter-icon', type='mono', class='w-1/2 h-1/2')
+            a(class=socialLinkStyle.join(' '), href='#')
+              +icon(name='white-instagram-icon', type='mono', class='w-1/2 h-1/2')
+            a(class=socialLinkStyle.join(' '), href='#')
+              +icon(name='white-pinterest-icon', type='mono', class='w-1/2 h-1/2')
+
+        //- Columns with lists of links
+        .flex.justify-around.gap-8.ss_basis-full(class='basis-2/5 md_basis-[45%]')
+          +footerCol(footerListsFirst, listHeaderStyle, itemStyle, linkStyle)
+
+        .flex.justify-around.gap-8.ss_basis-full(class='basis-2/5 md_basis-[45%]')
+          +footerCol(footerListsSecond, listHeaderStyle, itemStyle, linkStyle)
+
+    //- Separator line
+    .w-full.bg-gray.bg-opacity-20(class='h-[1px]')
+
+    //- Copyright
+    .container
+      .flex.flex-wrap.items-center.justify-between.gap-x-5.gap-y-4.py-8.ss_py-6.xs_py-4
+        span.inline-block.font-secondary.text-sm.leading-none.opacity-80.md_text-xs.ss_basis-full.ss_text-center
+          | © 2021 Zone. - All rights reserved.
+        ul.p-0.flex.flex-wrap.items-center.gap-x-12.gap-y-3.md_gap-x-8.ss_basis-full.ss_justify-center
+          -
+            const bottomFooterLinkStyle = [
+              'no-underline text-inherit p-1',
+              'duration-200 hover_text-mainColor'
+            ]
+
+          each item in footerCommonList
+            li.text-sm.leading-none.text-opacity-80.md_text-xs.ss_text-center
+              a(class=bottomFooterLinkStyle, href=item.url)= item.title

@@ -1,0 +1,49 @@
+include ../icon/icon.pug
+
+mixin service-item(title, descr, svgName, bg, svgType = 'mono')
+  -
+    const serviceItemStyle = [
+      'bg-glassmorph-dark-gradient-lt shadow-[0_22px_18px_rgba(0,0,0,0.05)] bg-opacity-50',
+      'border-solid border-[1px] border-[rgba(255,255,255,0.05)] rounded-[34px]'
+    ]
+
+  div(class=serviceItemStyle.join(' '))
+    .flex.flex-col.h-full.px-6.py-9.text-white-100.text-center.sm_px-4.sm_py-7
+      -
+        const iconBg = bg !== 'undefined' && bg ? bg : ''
+        const iconName = svgName !== 'undefined' && svgName ? svgName : ''
+        let iconType = ''
+
+      if (svgType === 'mono' || svgType === 'multi')
+        - iconType = svgType;
+
+      .flex.items-center.justify-center.mx-auto.mb-5.rounded-full(class='w-[74px] h-[74px] ' + iconBg)
+        +icon.text-white-100(name=iconName, type=iconType, class='w-1/2 h-1/2')
+      h3.mb-4.font-medium.text-2xl.sm_mb-3(class='sm_text-[20px]')= title
+      p.flex-auto.text-base.md_text-sm(class='leading-[160%] sm_text-[13px]')= descr
+      .flex.justify-center.mt-6
+        a.inline-flex.items-center.gap-2.duration-200.hover_text-mainColor.sm_text-sm(href='#')
+          | Learn more
+          +icon.h-3(name='arrow-right', type='mono', class='w-[14px]')
+
+mixin services
+  - const fishText = 'Lorem ipsum dolor sit amet, consectetur the adipiscing elit. Sed quis accumsan nisi Ut ut felis congue nisl hendrerit commodo.';
+
+  div(class='mt-[80px]')&attributes(attributes)
+    .container
+      .mb-10.text-white-100.text-center
+        h2.font-bold.leading-tight.tracking-wide.ss_text-2xl(class='text-[42px] md_text-[32px]')
+          | Our Service
+        p.text-base.md_mt-5.md_text-sm(class='mt-[30px]')
+          | We turn information into actionable insights We work to
+          | understand your issues <br class='sm_hidden'> and are driven
+          | to ask better questions in the pursuit of making work.
+
+      .relative
+        .grid.grid-cols-3.gap-x-7.gap-y-10.md_grid-cols-2.ss_grid-cols-1
+          +service-item('Order Management', fishText, 'surface', 'bg-icon-gradient-violet')
+          +service-item('Social Assistant', fishText, 'rate-up', 'bg-icon-gradient-red')
+          +service-item('Crypto Platform', fishText, 'crypto', 'bg-icon-gradient-cyan')
+          +service-item('Smart Trading Modules', fishText, 'engineer', 'bg-icon-gradient-green')
+          +service-item('Analyzer of the News', fishText, 'graph', 'bg-icon-gradient-purple')
+          +service-item('Module of Price Notification', fishText, 'analysis', 'bg-icon-gradient-blue')

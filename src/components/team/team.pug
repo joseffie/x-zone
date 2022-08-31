@@ -1,0 +1,96 @@
+include ../icon/icon.pug
+
+mixin team
+  div(class='mt-[100px] xs_mt-[80px]')&attributes(attributes)
+    .container
+      .mb-10.text-center
+        -
+          const itemStyle = [
+            'flex flex-col bg-glassmorph-dark-gradient-lt p-9 text-center',
+            'rounded-[34px] border-[1px] border-white-100 border-opacity-10',
+            'shadow-[0_22px_18px_rgba(0,0,0,0.05)] ss_py-8 ss_px-6'
+          ]
+
+          const socialLinkStyle = [
+            'inline-block w-[18px] h-[18px] no-underline duration-200',
+            'hover_opacity-60 ss_w-4 ss_h-4 xs_w-[18px] xs_h-[18px]'
+          ]
+
+          const teamPicStyle = [
+            'w-[90px] h-[90px] mb-3 mx-auto overflow-hidden rounded-full',
+            'border-[1px] border-white-100 border-opacity-10',
+            'bg-glassmorph-dark-gradient-lt shadow-[0_22px_18px_rgba(0,0,0,0.05)]',
+            'ss_w-20 ss_h-20'
+          ]
+
+          const teamNameStyle = [
+            'mb-2 font-medium text-[28px] leading-normal md_text-2xl ss_text-xl ss_mb-0.5'
+          ]
+
+          const teamJobStile = [
+            'mb-3 text-base tracking-wide uppercase flex-grow md_text-sm ss_text-xs'
+          ]
+
+        h2.font-bold.leading-tight.ss_text-2xl(class='text-[42px] md_text-[32px]')
+          | Meet Our Team
+        p.text-base.md_mt-5.ss_mt-3.md_text-sm.sm_text-xs(class='mt-[30px]')
+          | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          | Sed quis <br class='sm_hidden'> accumsan nisi Ut ut felis
+          | congue nisl hendrerit commodo.
+      .grid.grid-cols-4.gap-7.md_grid-cols-2.xs_grid-cols-1
+        div(class=itemStyle.join(' '))
+          div(class=teamPicStyle.join(' '))
+            img.w-full.h-full.p-0.object-contain(src='@img/team/pic1.png', alt='Sunny Khan')
+          h4(class=teamNameStyle.join(' ')) Sunny Khan
+          h5(class=teamJobStile.join(' ')) Executive officer
+          .flex.flex-wrap.items-center.justify-center.gap-3
+            a(class=socialLinkStyle.join(' '), href='#', target='_blank')
+              +icon(name='skype-icon', type='multi', class='w-[inherit] h-[inherit]')
+            a(class=socialLinkStyle.join(' '), href='#', target='_blank')
+              +icon(name='linkedin-icon', type='multi', class='w-[inherit] h-[inherit]')
+            a(class=socialLinkStyle.join(' '), href='#', target='_blank')
+              +icon(name='twitter-icon', type='multi', class='w-[inherit] h-[inherit]')
+            a(class=socialLinkStyle.join(' '), href='#', target='_blank')
+              +icon(name='facebook-icon', type='multi', class='w-[inherit] h-[inherit]')
+        div(class=itemStyle.join(' '))
+          div(class=teamPicStyle.join(' '))
+            img.w-full.h-full.p-0.object-contain(src='@img/team/pic2.png', alt='Alina Jesia')
+          h4(class=teamNameStyle.join(' ')) Alina Jesia
+          h5(class=teamJobStile.join(' ')) UX/UI designer
+          .flex.flex-wrap.items-center.justify-center.gap-3
+            a(class=socialLinkStyle.join(' '), href='#', target='_blank')
+              +icon(name='skype-icon', type='multi', class='w-[inherit] h-[inherit]')
+            a(class=socialLinkStyle.join(' '), href='#', target='_blank')
+              +icon(name='linkedin-icon', type='multi', class='w-[inherit] h-[inherit]')
+            a(class=socialLinkStyle.join(' '), href='#', target='_blank')
+              +icon(name='twitter-icon', type='multi', class='w-[inherit] h-[inherit]')
+            a(class=socialLinkStyle.join(' '), href='#', target='_blank')
+              +icon(name='facebook-icon', type='multi', class='w-[inherit] h-[inherit]')
+        div(class=itemStyle.join(' '))
+          div(class=teamPicStyle.join(' '))
+            img.w-full.h-full.p-0.object-contain(src='@img/team/pic3.png', alt='Alex Sohag')
+          h4(class=teamNameStyle.join(' ')) Alex Sohag
+          h5(class=teamJobStile.join(' ')) Business development
+          .flex.flex-wrap.items-center.justify-center.gap-3
+            a(class=socialLinkStyle.join(' '), href='#', target='_blank')
+              +icon(name='skype-icon', type='multi', class='w-[inherit] h-[inherit]')
+            a(class=socialLinkStyle.join(' '), href='#', target='_blank')
+              +icon(name='linkedin-icon', type='multi', class='w-[inherit] h-[inherit]')
+            a(class=socialLinkStyle.join(' '), href='#', target='_blank')
+              +icon(name='twitter-icon', type='multi', class='w-[inherit] h-[inherit]')
+            a(class=socialLinkStyle.join(' '), href='#', target='_blank')
+              +icon(name='facebook-icon', type='multi', class='w-[inherit] h-[inherit]')
+        div(class=itemStyle.join(' '))
+          div(class=teamPicStyle.join(' '))
+            img.w-full.h-full.p-0.object-contain(src='@img/team/pic4.png', alt='Afroza Mou')
+          h4(class=teamNameStyle.join(' ')) Afroza Mou
+          h5(class=teamJobStile.join(' ')) Head of marketing
+          .flex.flex-wrap.items-center.justify-center.gap-3
+            a(class=socialLinkStyle.join(' '), href='#', target='_blank')
+              +icon(name='skype-icon', type='multi', class='w-[inherit] h-[inherit]')
+            a(class=socialLinkStyle.join(' '), href='#', target='_blank')
+              +icon(name='linkedin-icon', type='multi', class='w-[inherit] h-[inherit]')
+            a(class=socialLinkStyle.join(' '), href='#', target='_blank')
+              +icon(name='twitter-icon', type='multi', class='w-[inherit] h-[inherit]')
+            a(class=socialLinkStyle.join(' '), href='#', target='_blank')
+              +icon(name='facebook-icon', type='multi', class='w-[inherit] h-[inherit]')

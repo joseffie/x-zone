@@ -1,0 +1,126 @@
+{
+  "mainNavData": [
+    {
+      "title": "Home",
+      "url": "/"
+    },
+    {
+      "title": "About Us",
+      "url": "#"
+    },
+    {
+      "title": "Service",
+      "url": "#"
+    },
+    {
+      "title": "Pricing",
+      "url": "#"
+    },
+    {
+      "title": "Blog",
+      "url": "#"
+    }
+  ],
+  "footerListsFirst": [
+    {
+      "header": "Service",
+      "links": [
+        {
+          "title": "Order Management",
+          "url": "#"
+        },
+        {
+          "title": "Social Assistant",
+          "url": "#"
+        },
+        {
+          "title": "Crypto Platform",
+          "url": "#"
+        },
+        {
+          "title": "Analyzer of the News",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "header": "Company",
+      "links": [
+        {
+          "title": "About Us",
+          "url": "#"
+        },
+        {
+          "title": "News",
+          "url": "#"
+        },
+        {
+          "title": "Out trusted partner",
+          "url": "#"
+        },
+        {
+          "title": "New users FAQ",
+          "url": "#"
+        }
+      ]
+    }
+  ],
+  "footerListsSecond": [
+    {
+      "header": "Supports",
+      "links": [
+        {
+          "title": "Help center",
+          "url": "#"
+        },
+        {
+          "title": "Feedback",
+          "url": "#"
+        },
+        {
+          "title": "Contact us",
+          "url": "#"
+        },
+        {
+          "title": "Terms conditions",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "header": "Resources",
+      "links": [
+        {
+          "title": "Download app",
+          "url": "#"
+        },
+        {
+          "title": "Blog",
+          "url": "#"
+        },
+        {
+          "title": "What's new",
+          "url": "#"
+        },
+        {
+          "title": "Sitemap",
+          "url": "#"
+        }
+      ]
+    }
+  ],
+  "footerCommonList": [
+    {
+      "title": "Privacy",
+      "url": "#"
+    },
+    {
+      "title": "Security",
+      "url": "#"
+    },
+    {
+      "title": "Terms",
+      "url": "#"
+    }
+  ]
+}
